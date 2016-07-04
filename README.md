@@ -5,27 +5,27 @@
 ## 安装插件
 
 ```
-	npm install -g fis-parser-config
+npm install -g fis-parser-config
 ```
 
 ## fis中添加插件举例
 
 ```
-	//以fis3为例
-	fis.match('*', {
-		parser: fis.plugin('config', {
-			"key": "value"
-		})
+//以fis3为例
+fis.match('*', {
+	parser: fis.plugin('config', {
+		"key": "value"
 	})
+})
 ```
 
 ## 使用规则举例
 
 例如：配置中，声明了如下的数据。
 ```
-  {
-    "key": "value"
-  }
+{
+  "key": "value"
+}
 ```
 
 那么在js中可以，使用如下的方式来获得。
@@ -33,19 +33,19 @@
 编译前：
 
 ```
-  //方法1(推荐使用)
-  var domain = __conf(key);
-  //方法2
-  var domain = "__confIn(key)";
+//方法1(推荐使用)
+var domain = __conf(key);
+//方法2
+var domain = "__confIn(key)";
 ```
 
 编译后：
 
 ```
-  //方法1(推荐使用)
-  var domain = "value";
-  //方法2
-  var domain = "value";
+//方法1(推荐使用)
+var domain = "value";
+//方法2
+var domain = "value";
 ```
 
 非js语法中，使用__confIn方式。
