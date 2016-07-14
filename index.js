@@ -1,6 +1,4 @@
 var fs = require('fs')
-var subpaths = {}
-var files = []
 var keys = null
 /**
  * 读取json文件，并返回json对象
@@ -47,10 +45,6 @@ var loadConfig = function(file){
  */
 module.exports = function (content, file, options) {
   var config = options.file || null
-  if(!subpaths[file.subpath]){
-  	subpaths[file.subpath] = file
-  	files.push(file.realpath)
-  }
   // 初次加载环境变量数据，并存储到keys对象
   keys || (keys = loadConfig(config))
   if(options.keys){

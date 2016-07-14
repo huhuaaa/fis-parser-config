@@ -1,6 +1,6 @@
 # fis-parser-config
 
-为了解决多站点域名各异以及一些前端变量在各个环境下的不同，而给程序带来复杂的判断逻辑和容易遗漏混乱。我们使用了fis-parser-config来通过前端编译，来替换设定的一些公共属性值。
+为了解决多站点域名各异以及一些前端变量在各个环境下的不同，而给程序带来复杂的判断逻辑、容易遗漏等问题。我们使用了fis-parser-config来通过前端编译，来替换设定的一些公共属性值。
 
 ## 安装插件
 
@@ -8,16 +8,36 @@
 npm install -g fis-parser-config
 ```
 
-## fis中添加插件举例
+## fis3中添加插件
 
 ```
 //以fis3为例
 fis.match('*', {
+	parser: fis.plugin('config', options)
+})
+```
+
+## options说明
+
+
+| 参数    |   类型  | 是否可选 | 说明 |
+| ------- |:------:|:-------:| ----:|
+| file    | String |   是    | 指定读取键值的json文件，文件内容必须为标准JSON格式。 |
+| keys    | JSON   |   是    | 指定键值变量；若和file参数一起使用，两个参数执行的JSON对象将会合并，并且相同价值会覆盖file指定的数据。|
+
+options详细实例：
+
+```
+fis.match('*', {
 	parser: fis.plugin('config', {
-		"key": "value"
+		"file": "env/debug.json",
+		"keys": {
+			"version": "1.0.0"
+		}
 	})
 })
 ```
+
 
 ## 使用规则举例
 
