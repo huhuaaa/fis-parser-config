@@ -48,8 +48,8 @@ module.exports = function (content, file, options) {
   // 初次加载环境变量数据，并存储到keys对象
   keys || (keys = loadConfig(config))
   if(options.keys){
-  	for(var i in options.key){
-  		keys[i] = options.key[i]
+  	for(var i in options.keys){
+  		keys[i] = options.keys[i]
   	}
   }
   //替换keys对象中，所有键值属性对应的__conf环境变量。
