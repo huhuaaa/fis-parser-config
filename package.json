@@ -1,6 +1,6 @@
 {
   "name": "fis-parser-config",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "fis-parser-config, use this plugin , you can esay to manage the front config variables.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/huhuaaa/fis-parse-config.git"
+    "url": "git+https://github.com/huhuaaa/fis-parser-config.git"
   },
   "keywords": [
     "fis",
@@ -20,7 +20,7 @@
   "author": "huhuaaa",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/huhuaaa/fis-parse-config/issues"
+    "url": "https://github.com/huhuaaa/fis-parser-config/issues"
   },
-  "homepage": "https://github.com/huhuaaa/fis-parse-config#readme"
+  "homepage": "https://github.com/huhuaaa/fis-parser-config#readme"
 }
