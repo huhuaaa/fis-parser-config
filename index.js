@@ -59,7 +59,12 @@ module.exports = function (content, file, options) {
 	  	content = content.replace(reg, '"' + keys[i].replace(/"/g, '\\"') + '"')
 	  	var reg = new RegExp('__confIn\\(' + i + '\\)', 'g')
 	  	content = content.replace(reg, keys[i])
-  	}
+  	}else if(typeof keys[i] == 'number' || typeof keys[i] == 'boolean'){
+        var reg = new RegExp('__conf\\(' + i + '\\)', 'g')
+        content = content.replace(reg, keys[i].toString())
+        var reg = new RegExp('__confIn\\(' + i + '\\)', 'g')
+        content = content.replace(reg, keys[i].toString())
+    }
   }
   return content;
 }
