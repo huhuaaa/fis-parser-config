@@ -11,7 +11,7 @@ var readJson = function(file){
 	try{
 		json = JSON.parse(str)
 	}catch(e){
-		fis.log.notice('fis3-parser-config: parse file content to json error.[' + file + ']')
+		fis.log.notice('fis-parser-config: parse file content to json error.[' + file + ']')
 	}
 	return json
 }
