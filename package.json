@@ -1,6 +1,6 @@
 {
   "name": "fis-parser-config",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "fis-parser-config, use this plugin , you can esay to manage the front config variables.",
   "main": "index.js",
   "scripts": {

@@ -20,8 +20,8 @@ fis.match('*', {
 ## options说明
 
 
-| 参数    |   类型  | 是否可选 | 说明 |
-| ------- |:------:|:-------:| :---- |
+| 参数    |   类型  | 可选 | 说明 |
+| :-------: | :------: | :-------: | :---- |
 | file    | String |   是    | 指定读取键值的json文件，文件内容必须为标准JSON格式。 |
 | keys    | JSON   |   是    | 指定键值变量；若和file参数一起使用，两个参数执行的JSON对象将会合并，并且相同价值会覆盖file指定的数据。|
 
@@ -44,7 +44,10 @@ fis.match('*', {
 例如：配置中，声明了如下的数据。
 ```
 {
-  "key": "value"
+  "key": "value",
+  "key1": true,
+  "key2": 1,
+  "key3": "false"
 }
 ```
 
@@ -54,18 +57,24 @@ fis.match('*', {
 
 ```
 //方法1(推荐使用)
-var domain = __conf(key);
-//方法2
-var domain = "__confIn(key)";
+var key = __conf(key);        //string
+var key1 = __conf(key1);      //boolean
+var key2 = __conf(key2);      //number
+//方法2(__confIn)
+var key = "__confIn(key)";    
+var key3 = __confIn(key3);    
 ```
 
 编译后：
 
 ```
 //方法1(推荐使用)
-var domain = "value";
-//方法2
-var domain = "value";
+var key = "value";
+var key1 = true;
+var key2 = 1;
+//方法2(__confIn)
+var key = "value";
+var key3 = false;
 ```
 
 非js语法中，使用__confIn方式。
